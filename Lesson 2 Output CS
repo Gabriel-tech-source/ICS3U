@@ -1,0 +1,8 @@
+amount = 12 * 2
+print("Two dozen is: ", amount)
+amount = 24
+amount = amount + 1
+print("The amount is ", amount)
+amount = 25
+amount = amount * 2 
+print (amount)
