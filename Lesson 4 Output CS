@@ -1,0 +1,8 @@
+num = 18          # Example whole number
+divisor = 3      # Substitute for the divisor (must not be zero)
+
+# Check for zero divisor
+if divisor == 0:
+    print("Error: Cannot divide by zero.")
+else:
+    print("When", num, "is divided by", divisor, "the result is:", num / divisor)
