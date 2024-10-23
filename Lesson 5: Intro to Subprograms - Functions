@@ -1,1 +1,7 @@
+def add(a, b):
+  return a + b
+a = int(input("Please enter a value a"))
+b = int(input("Please enter a value b"))
+print(add(a, b))
 
+math.pow
