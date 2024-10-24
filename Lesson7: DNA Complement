@@ -1,0 +1,13 @@
+def comp(S):
+    # Create a mapping of DNA base pairs
+    complement = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}
+    
+    # Use a list comprehension to build the complementary strand
+    return ''.join(complement[base] for base in S)
+
+# Main part of the program
+if __name__ == "__main__":
+    dna_strand = "ATCGTA"
+    complementary_strand = comp(dna_strand)
+    print("Original Strand: ", dna_strand)
+    print("Complementary Strand: ", complementary_strand)
