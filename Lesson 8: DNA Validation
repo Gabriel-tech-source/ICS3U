@@ -1,12 +1,25 @@
-import re
+def validate(S):
+    # Valid nucleotides
+    valid_nucleotides = {'A', 'C', 'G', 'T'}
+    error_positions = []
 
-def check_input():
-    while True:
-        try:
-            sequence = raw_input("Please input:")
-            if sequence = [a,t,c,g]:  # checking for valid input
-                continue
-            else:
-                print("invalid input, sequence coule only contain the "
-                      "following letters (a,t,c,g)"):
-check_input()
+    # Iterate over each character in the sequence
+    for i, char in enumerate(S):
+        if char not in valid_nucleotides:
+            error_positions.append(i + 1)  # Store the position of the error
+
+    # Check if any errors were found
+    if error_positions:
+        print(f"Invalid nucleotide(s) at position(s): {error_positions}")
+        return False
+    else:
+        return True
+
+# Main part of the program
+sequence = "CNTA"  # You can change this to test other sequences
+result = validate(sequence)
+
+if result:
+    print("The sequence is valid.")
+else:
+    print("The sequence contains errors.")
