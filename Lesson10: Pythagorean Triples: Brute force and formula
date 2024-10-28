@@ -1,1 +1,41 @@
+def find_pythagorean_triples(n):
+    """
+    Finds Pythagorean triples up to the given upper limit n.
+    
+    Args:
+    n: The upper limit for the search.
+    
+    Returns:
+    List of Pythagorean triples.
+    """
+    triples = []
+    
+    for i in range(3, n+1):
+        if i % 2 == 1:  # odd case
+            a = i
+            b = (i // 2) * (i + 1)
+            c = (i // 2) * (i + 1) + 1
+        else:  # even case
+            a = i
+            m = (i ** 2) // 4
+            b = m - 1
+            c = m + 1
 
+        triples.append([a, b, c])
+    
+    return triples
+
+def display_triples(triples):
+    """
+    Displays Pythagorean triples with their corresponding formula.
+    """
+    for triple in triples:
+        a, b, c = triple
+        print(f"[{a}, {b}, {c}] => {a**2} + {b**2} = {c**2}")
+
+# Input from user for upper limit
+upper_limit = int(input("Please enter an upper limit: "))
+
+# Find and display the Pythagorean triples
+triples = find_pythagorean_triples(upper_limit)
+display_triples(triples)
