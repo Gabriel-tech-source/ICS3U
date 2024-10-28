@@ -1,7 +1,29 @@
-def add(a, b):
-  return a + b
-a = int(input("Please enter a value a"))
-b = int(input("Please enter a value b"))
-print(add(a, b))
+import math
 
-math.pow
+# Function to add two numbers
+def add(a, b):
+    return a + b
+
+# Function to raise m to the power of n
+def myPow(m, n):
+    return m ** n  # Using the exponentiation operator
+
+# Main part of the program
+a = int(input("Please enter a value for a: "))
+b = int(input("Please enter a value for b: "))
+
+# Using add() function
+print(f"The sum of {a} and {b} is: {add(a, b)}")
+
+# Using myPow() function and checking against math.pow()
+my_pow_result = myPow(a, b)
+math_pow_result = math.pow(a, b)
+
+print(f"{a} raised to the power of {b} using myPow() is: {my_pow_result}")
+print(f"{a} raised to the power of {b} using math.pow() is: {math_pow_result}")
+
+# Check if the results match
+if my_pow_result == math_pow_result:
+    print("The results from myPow() and math.pow() are the same.")
+else:
+    print("The results from myPow() and math.pow() are different.")
