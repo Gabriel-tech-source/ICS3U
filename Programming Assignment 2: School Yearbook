@@ -1,1 +1,63 @@
+"""
+Author: Gabriel 
+Date: 2024-11-08
+Description: This script calculates the area of a rectangle and a circle,
+             the volume and surface area of a cylind er, and the period of a
+             pendulum based on a fixed length. - fix this later
+"""
 
+import math
+
+def find_min_perimeter(n):
+    # Initialize minimum perimeter to infinity and dimensions to 1 x n
+    min_perimeter = float('inf')
+    best_dimensions = (1, n)
+
+    # Check for all factors of n from 1 to the square root of n
+    for x in range(1, math.isqrt(n) + 1):
+        # If x is a factor of n
+        if n % x == 0:
+            y = n // x  # Calculate the corresponding dimension
+            perimeter = 2 * (x + y)  # Calculate the perimeter for the dimensions
+
+            # Update minimum perimeter and best dimensions if current is smaller
+            if perimeter < min_perimeter:
+                min_perimeter = perimeter 
+                best_dimensions = (x, y)
+
+    return min_perimeter, best_dimensions
+
+def main():
+    # Welcome message
+    print("Welcome to the school yearbook program!")
+    
+    while True:
+        # Prompt user for input
+        user_input = input("Please input your number of photographs: ")
+        
+        # Check if the input is 'done' to terminate the program
+        if user_input.lower() == "done":
+            print("Goodbye")
+            break
+
+        try:
+            # Convert input to an integer
+            n = int(user_input)
+
+            # Validate that the number is positive
+            if n < 1:
+                print(f"{n} is not a valid number of photos. Please enter a positive number.")
+                continue
+            
+            # Find the minimum perimeter and dimensions
+            min_perimeter, dimensions = find_min_perimeter(n)
+
+            # Print the result
+            print(f"Minimum perimeter is {min_perimeter} with dimensions: {dimensions[0]} x {dimensions[1]}.")
+
+        except ValueError:
+            # Handle invalid integer conversion
+            print("Invalid input. Please enter a positive integer or 'done' to exit.")
+
+if __name__ == "__main__":
+    main()
