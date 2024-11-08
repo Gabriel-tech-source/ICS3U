@@ -1,9 +1,9 @@
 """
 Author: Gabriel
 Date: 2024-10-1
-Description: This script arranges a given number of 1x1 yearbook photos in a rectangular 
-             layout with the smallest perimeter. Users input the number of photos or "done" 
-             to exit. The program outputs optimal dimensions and perimeter for valid entries.
+Description: This script calculates the area of a rectangle and a circle,
+             the volume and surface area of a cylinder, and the period of a
+             pendulum based on a fixed length.
 """
 
 import math 
