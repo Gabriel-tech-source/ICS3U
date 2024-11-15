@@ -1,6 +1,0 @@
-import math 
-r = 7 
-area_semicircle = 0.5 * math.pi * r**2 
-area_square = (2 * r)**2 
-total_area = area_semicircle + area_square 
-print("The total area for the semi circle and square is", total_area)
