@@ -1,1 +1,8 @@
+# Modify 2:
+import turtle
 
+t = turtle.Turtle()
+
+for i in range(80):
+    t.forward(100)
+    t.left(93)
