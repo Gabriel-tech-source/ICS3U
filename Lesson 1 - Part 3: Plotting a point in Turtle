@@ -1,1 +1,8 @@
+import turtle
+t = turtle.Turtle()
 
+for i in range(1):
+    t.penup()
+    t.pendown()
+    t.goto(100,100)
+    t.dot(20, "red")
