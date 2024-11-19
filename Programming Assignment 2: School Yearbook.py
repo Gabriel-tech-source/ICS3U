@@ -6,8 +6,6 @@ Description: This script arranges a given number of 1x1 yearbook photos in a rec
              to exit. The program outputs optimal dimensions and perimeter for valid entries.
 """
 
-import math
-
 def min_perimeter_photos(num_photos):
     """
     Finds the rectangle dimensions with the minimum perimeter
@@ -39,19 +37,20 @@ def min_perimeter_photos(num_photos):
 # Main loop for user input
 print("Welcome to the school yearbook program!")  # Greet the user
 
-# Set the number of iterations you want to allow
-for _ in range(100):  # This loop will allow the user to input up to 100 times, for example
+# Limit the number of iterations (e.g., 100)
+for i in range(100):  
     user_input = input("Input a number of photos (or 'done' to finish): ")  # Prompt for input
     if user_input.lower() == "done":  # If the user wants to stop
         print("Thank you for using the program. Goodbye!")  # Farewell message
         break  # Exit the loop if 'done' is entered
+    
     try:
         num_photos = int(user_input)  # Attempt to convert input to integer
         if num_photos < 1:  # Validate that input is a positive integer
             print(f"{num_photos} is not a valid number of photos. Please enter a positive number.")
             continue  # Restart the loop if input is invalid
         
-        # Calculate best dimensions and perimeter for given number of photos
+        # Calculate best dimensions and perimeter for the given number of photos
         dims, perimeter = min_perimeter_photos(num_photos)
         print(f"The best dimensions are {dims[0]} x {dims[1]} for a perimeter of {perimeter}.")
     
