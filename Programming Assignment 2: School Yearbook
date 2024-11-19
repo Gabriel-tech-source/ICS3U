@@ -38,17 +38,18 @@ def min_perimeter_photos(num_photos):
 
 # Main loop for user input
 print("Welcome to the school yearbook program!")  # Greet the user
-while True:
+
+# Set the number of iterations you want to allow
+for _ in range(100):  # This loop will allow the user to input up to 100 times, for example
     user_input = input("Input a number of photos (or 'done' to finish): ")  # Prompt for input
-    if user_input.lower() == "done":  # Check if user wants to finish
+    if user_input.lower() == "done":  # If the user wants to stop
         print("Thank you for using the program. Goodbye!")  # Farewell message
-        break  # Exit loop if 'done' is entered
-    
+        break  # Exit the loop if 'done' is entered
     try:
         num_photos = int(user_input)  # Attempt to convert input to integer
         if num_photos < 1:  # Validate that input is a positive integer
             print(f"{num_photos} is not a valid number of photos. Please enter a positive number.")
-            continue  # Restart loop if input is invalid
+            continue  # Restart the loop if input is invalid
         
         # Calculate best dimensions and perimeter for given number of photos
         dims, perimeter = min_perimeter_photos(num_photos)
