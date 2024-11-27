@@ -1,1 +1,59 @@
+import os
+
+C:\Users\755505\OneDrive - Peel District School Board\Downloads
+def read_xpm(filename):
+    if not os.path.exists(filename):
+        print(f"Error: The file '{filename}' does not exist.")
+        return
+
+    # Open the file for reading
+    with open(filename, "r") as fh:
+        # Read the first line for rows, cols, and numColors
+        colorData = fh.readline().strip()
+        rows, cols, numColors = map(int, colorData.split())
+        
+        # Output image dimensions and number of colors
+        print(f"Dimensions: {rows} x {cols}")
+        print(f"Number of colors: {numColors}")
+        
+        # Read the color definitions and store them in a list
+        colorDefs = []
+        for _ in range(numColors):
+            colorLine = fh.readline().strip()
+            sym, c, color = colorLine.split()
+            if sym == "~":
+                sym = " "  # Replace the tilde (~) with a space
+            colorDefs.append([sym, color])
+        
+        # Output the color definitions
+        print("Color Definitions:")
+        for sym, color in colorDefs:
+            print(f"Symbol: {sym}, Color: {color}")
+        
+        # Read the image data and store it in a list of rows
+        image = []
+        for _ in range(rows):
+            image.append(fh.readline().strip())
+        
+        # Output the image data (symbols)
+        print("Image Data (symbols):")
+        for row in image:
+            print(row)
+        
+        # Convert the image symbols to colors using the color definitions
+        color_map = {sym: color for sym, color in colorDefs}
+        colored_image = []
+        
+        for row in image:
+            colored_row = "".join([color_map[sym] for sym in row])
+            colored_image.append(colored_row)
+        
+        # Output the image with color names instead of symbols
+        print("Image Data (colors):")
+        for row in colored_image:
+            print(row)
+
+# Example usage
+filename = "smiley_emoji_mod.xpm"  # Replace with your actual file name
+read_xpm(filename)
 
