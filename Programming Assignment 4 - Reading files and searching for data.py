@@ -1,6 +1,7 @@
 """
 Wordle Database Program
-Author: [Your Name]
+Author: Gabriel
+Date: 2024-12-20
 Description: A simple program to search for Wordle puzzle solutions by word
              or by date. Data is stored in a file called "wordle.dat".
 """
