@@ -1,6 +1,7 @@
 """
 Wordle Database Program
 Author: Gabriel
+Date: 2024-12-20
 Description: This program allows users to search for Wordle puzzle solutions
               by word or by date. Users can input a specific date or word,
               and the program will return the corresponding puzzle solution.
