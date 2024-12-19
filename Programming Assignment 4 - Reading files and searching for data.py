@@ -13,6 +13,7 @@ def merge(day, month, year):
 def main():
     print("Welcome to the Wordle Database!")
     
+    # Read wordle data from file
     with open("wordle.dat", "r") as file:
         lines = file.readlines()
     
@@ -25,6 +26,9 @@ def main():
     while True:
         choice = input("Enter 'w' to search by word or 'd' to search by date (or 'q' to quit): ").strip().lower()
         
+        if choice == 'q':
+            break  # Exit the loop and quit the program
+
         if choice == 'w':
             word = input("Enter the word to search for: ").strip().upper()
             if word in words:
@@ -34,13 +38,24 @@ def main():
                 print(f"{word} was not found.")
         
         elif choice == 'd':
-            year = input("Enter the year: ").strip()
-            month = input("Enter the month (3-letter abbreviation, e.g., 'Jan'): ").strip().capitalize()
+            # Get and validate year input
+            year = input("Enter the year (2021-2024): ").strip()
+            while not year.isdigit() or int(year) < 2021 or int(year) > 2024:
+                print("Invalid year. Please enter a year between 2021 and 2024.")
+                year = input("Enter the year (2021-2024): ").strip()
+            
+            # Get and validate month input
+            month = input("Enter the month (e.g., 'Jan'): ").strip().capitalize()
             while month not in months:
-                print("Invalid month. Please enter a valid month abbreviation.")
+                print("Invalid month. Please enter a valid month abbreviation (e.g., 'Jan').")
                 month = input("Enter the month (e.g., 'Jan'): ").strip().capitalize()
             
-            day = input("Enter the day: ").zfill(2).strip()
+            # Get and validate day input
+            day = input("Enter the day (1-31): ").zfill(2).strip()
+            while not day.isdigit() or int(day) < 1 or int(day) > 31:
+                print("Invalid day. Please enter a valid day between 1 and 31.")
+                day = input("Enter the day (1-31): ").zfill(2).strip()
+            
             date = merge(day, month, year)
             
             if date in dates:
@@ -49,14 +64,8 @@ def main():
             else:
                 print(f"No word found for {date}.")
         
-        elif choice == 'q':
-            break
-        
         else:
             print("Invalid input. Please try again.")
-
-if __name__ == "__main__":
-    main()
 
 if __name__ == "__main__":
     main()
