@@ -1,3 +1,11 @@
+"""
+Assignment: Turtle Graphics - Display and Rotate an Image
+Author: Gabriel
+Date: 2024-12-20
+Description: This program reads modified XPM files and uses Turtle to display
+             or rotate the images based on user input.
+"""
+
 import turtle
 
 # Function to plot a point on the canvas
@@ -124,7 +132,6 @@ def main():
     rotate = rotate_choice == "yes"
     
     display_image(filename, rotate)
-
 # Run the program
 if __name__ == "__main__":
     main()
