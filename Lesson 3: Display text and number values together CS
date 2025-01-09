@@ -1,5 +1,0 @@
-print("Welcome to Sanjay's Koala Party!")
-print("It's possible Sanjay can distribute ", 12)
-print(" cookies for each bowl.")
-print("Sanjay has " + str(6) + " bowls for " + str(144) + " cookies.")
-print("Sanjay has " + str(24) + " cookies per " + str(1) + " bowl.")
