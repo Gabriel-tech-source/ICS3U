@@ -1,7 +1,7 @@
 # Credit Card Report: Final Project
 # Author: Gabriel Abdulnour
 # Date: January 23 2025
-# Description: This program reads credit card data from a file, identifies expired or soon-to-expire cards,
+# Description: This program reads credit card data from the data.dat file, identifies expired or soon-to-expire cards,
 #              sorts the data by expiry date, and writes the results to an output file.
 
 def read_data(file_name):
