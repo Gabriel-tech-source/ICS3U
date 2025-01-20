@@ -1,6 +1,6 @@
 # Credit Card Report: Final Project
 # Author: Gabriel Abdulnour
-# Date: January 2025
+# Date: January 23 2025
 # Description: This program reads credit card data from a file, identifies expired or soon-to-expire cards,
 #              sorts the data by expiry date, and writes the results to an output file.
 
