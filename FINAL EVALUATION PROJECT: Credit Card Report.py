@@ -3,7 +3,6 @@
 # Date: January 2025
 # Description: This program reads credit card data from a file, identifies expired or soon-to-expire cards,
 #              sorts the data by expiry date, and writes the results to an output file.
-
 def read_data(file_name):
     """
     Reads credit card data from the specified file.
